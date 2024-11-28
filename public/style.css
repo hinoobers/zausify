@@ -1,0 +1,106 @@
+/* General body styling */
+body {
+    background-color: #121212;
+    margin: 0;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+/* Styling for the settings header */
+.settings {
+    display: flex;
+    align-items: center; 
+    padding: 15px 20px;
+    background-color: #121212;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+
+.settings input[type="number"] {
+    background-color: #1f1f1f;
+    color: white;
+    border-radius: 5px;
+}
+
+.settings .setting input {
+    margin-right: 10px;
+}
+
+.settings .setting{
+    margin-right: 15px;
+}
+
+/* Container for content items */
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #1f1f1f;
+    width: 100%;
+    max-height: 80vh;
+    overflow-x: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-top: calc(60px + 15px);  /* Adjusts for header height */
+}
+
+/* Individual item styling */
+.item {
+    padding: 20px;
+    margin: 10px;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-radius: 8px;
+    flex-shrink: 0;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  /* Ensure button is placed at the bottom */
+    height: auto;  /* Remove fixed height */
+    min-height: 350px;  /* Set a minimum height */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Space out elements in .item */
+.item > *:not(button) {
+    margin-bottom: 10px;  /* Space between text, image, etc. */
+}
+
+.item button {
+    padding: 10px 20px;
+    background-color: #4a4a4a;
+    color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: auto;  /* Ensure button is placed at the bottom */
+}
+
+/* Ensure image is properly scaled */
+.item img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 15px;
+    object-fit: cover;  /* Prevents stretching of the image */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item {
+        width: 80%;
+        margin-bottom: 15px;
+    }
+}
